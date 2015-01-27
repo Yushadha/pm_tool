@@ -1,10 +1,12 @@
 class ProjectsController < ApplicationController
+  before_action :find_project,
+                  only: [:show, :edit, :update, :destroy]
   
   def new
   end
 
   def index
-    @project = Project.all
+    @projects = Project.all
   end
 
   def create
@@ -21,4 +23,11 @@ class ProjectsController < ApplicationController
 
   def destroy
   end
+
+  private
+
+  def find_project
+    @project = Project.find params[:id]
+  end
+
 end
