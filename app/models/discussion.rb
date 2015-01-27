@@ -1,5 +1,5 @@
 class Discussion < ActiveRecord::Base
 
- validates :title, presense: true
+ validates :title, presence: true
 
 end

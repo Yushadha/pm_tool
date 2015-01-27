@@ -1,5 +1,5 @@
 class Task < ActiveRecord::Base
 
-	validates :title, presence: true, uniqueness: {scope: :body, case_sensitive: :false}
+	validates :title, presence: true, uniqueness: true
 
 end
