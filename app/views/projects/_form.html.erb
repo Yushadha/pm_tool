@@ -1,10 +1,10 @@
-<!--<#% if @project.errors.any? %>
+<% if @project.errors.any? %>
 	<ul>
-		<#% @project.errors.full_messages.each do |msg| %>
-			<li><#%= msg %></li>
-		<#% end %>	
+		<% @project.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>	
 	</ul>
-<#% end %>-->
+<% end %>
 
 <%= form_for @project do |p| %>
 	<div class="form-group">	
