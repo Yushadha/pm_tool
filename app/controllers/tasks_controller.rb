@@ -25,7 +25,6 @@ class TasksController < ApplicationController
   end
 
   def edit
-    find_task
   end
 
   def update
