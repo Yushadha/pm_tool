@@ -1,20 +1,43 @@
 <h1>Tasks#index</h1>
 <p>Find me in app/views/tasks/index.html.erb</p>
 
-<% @tasks.each do |task| %>
-
-	<h3><%= link_to task.title, task %></h3>
-	<p> Due Date: <%= task.due_date %></p>
-	<p> Associated project: <%= task.project_id %></p>
-	<% if task.done? %>
-		<p> Task Completed </p>
-	<% else %>
-		<p> Task in Progress </p>
-	<% end %>
-<br>
-
-
+<h2> Tasks in progress </h2>
+	<div class="well">
+		<% @tasks.each do |task| %>
+			<% if task.done == false %>
+				<h3><%= link_to task.title, task %></h3>
+				<p> Due Date: <%= task.due_date %></p>
+				<p> Associated project: <%= task.project_id %></p>
+					<% if task.done? %>
+						<p> Task Completed </p>
+					<% else %>
+						<p> Task in Progress </p>
+					<% end %>
+					<br>
+			<% end %>
+		<% end %>
+	</div>
 
 <hr>
 
-<% end %>
+<h2> Tasks Completed </h2>
+	<div class="well">
+		<% @tasks.each do |task| %>
+			<% if task.done == true %>
+				<h3><%= link_to task.title, task %></h3>
+				<p> Due Date: <%= task.due_date %></p>
+				<p> Associated project: <%= task.project_id %></p>
+					<% if task.done? %>
+						<p> Task Completed </p>
+					<% else %>
+						<p> Task in Progress </p>
+					<% end %>
+					<br>
+			<% end %>
+		<% end %>
+	</div>
+
+
+
+
+
