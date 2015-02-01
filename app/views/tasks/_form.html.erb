@@ -16,6 +16,17 @@
 		<%= p.label :due_date %>
 		<%= p.datetime_field :due_date, class: "form-control" %>
 	</div>
+	<div class="form-group">
+		<%= p.label :title, "Select Associated Project"  %>
+		<br>
+			<div class="well">
+				<% @project.each do |project| %>
+					<%= p.radio_button :id, project %>
+					<%= p.label :title, project.title %>
+					<br>
+				<% end %>
+			</div>
+	</div>
 	<br>
 		<%= p.submit class: "btn btn_primary" %>
 <% end %>

@@ -1,31 +1,23 @@
 <h1>Tasks#show</h1>
 <p>Find me in app/views/tasks/show.html.erb</p>
 
+<h2><%= @task.title %></h2>
 
-<h2> Tasks in Progress</h2>
+	<div class="well" >
 
-<h2><strong><%= @task.title %></strong></h2>
-
-<p><%= @task.due_date %></p>
-<!-- Add associated project -->
-<!-- Add done -->
-
-<p>  </p>
-
-<%= link_to "Edit", edit_task_path(@task) %>
-
-<%= link_to "Delete", task_path(@task), method: :delete, data: {confirm: "Are you sure?"} %>
-
-<br>
-
-	<td>
-	  <% if @task.done? %>
-	    <%= link_to "done", task_path(@task, task: { done: false }), method: :patch, class: "btn btn-default" %>
-	  <% else %>
-	    <%= link_to "not done", task_path(@task, task: { done: true }), method: :patch, class: "btn btn-default" %>
-	  <% end %>
-	</td>
-
-<%= @task.done %>
-
-<h2> Tasks Completed </h2>
+		<p><%= @task.due_date %></p>
+		<!-- Add associated project -->
+		<!-- Add done -->
+		<p> Associated Project: <%= @project.title %>  </p>
+		<%= link_to "Edit", edit_task_path(@task) %>
+		<%= link_to "Delete", task_path(@task), method: :delete, data: {confirm: "Are you sure?"} %>
+		<br>
+			<td>
+			  <% if @task.done? %>
+			    <%= link_to "done", task_path(@task, task: { done: false }), method: :patch, class: "btn btn-default" %>
+			  <% else %>
+			    <%= link_to "not done", task_path(@task, task: { done: true }), method: :patch, class: "btn btn-default" %>
+			  <% end %>
+			</td>
+		<%= @task.done %>
+	</div>

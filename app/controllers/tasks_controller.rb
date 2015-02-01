@@ -4,6 +4,7 @@ class TasksController < ApplicationController
   
   def new
     @task = Task.new
+    @project = Project.all
     render :new
   end
 
@@ -22,6 +23,7 @@ class TasksController < ApplicationController
   end
 
   def show
+    @project = Project.find(@task.id)
   end
 
   def edit
@@ -47,7 +49,7 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.require(:task).permit(:title, :description, :due_date, :done)
+    params.require(:task).permit(:title, :description, :due_date, :done, :project_id)
   end
 
 end

@@ -4,7 +4,8 @@
 <% @tasks.each do |task| %>
 
 	<h3><%= link_to task.title, task %></h3>
-	<p>Due Date: <%= task.due_date %></p>
+	<p> Due Date: <%= task.due_date %></p>
+	<p> Associated project: <%= task.project_id %></p>
 	<% if task.done? %>
 		<p> Task Completed </p>
 	<% else %>
