@@ -7,6 +7,7 @@
 			<% if task.done == false %>
 				<h3><%= link_to task.title, task %></h3>
 				<p> Due Date: <%= task.due_date %></p>
+				<p> Body: <%= task.body %></p>
 				<p> Associated project: <%= task.project_id %></p>
 					<% if task.done? %>
 						<p> Task Completed </p>
@@ -26,6 +27,7 @@
 			<% if task.done == true %>
 				<h3><%= link_to task.title, task %></h3>
 				<p> Due Date: <%= task.due_date %></p>
+				<p> Body: <%= task.body %></p>
 				<p> Associated project: <%= task.project_id %></p>
 					<% if task.done? %>
 						<p> Task Completed </p>

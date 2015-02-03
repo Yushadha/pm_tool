@@ -5,10 +5,11 @@
 
 	<div class="well" >
 
-		<p><%= @task.due_date %></p>
+		<p><strong> Due Date: </strong><%= @task.due_date %></p>
+		<p><strong> Body: </strong><%= @task.body %></p>
 		<!-- Add associated project -->
 		<!-- Add done -->
-		<p> Associated Project: <%= @project.title %>  </p>
+		<p><strong> Associated Project: </strong> <%= @task.project.title %> </p>
 		<%= link_to "Edit", edit_task_path(@task) %>
 		<%= link_to "Delete", task_path(@task), method: :delete, data: {confirm: "Are you sure?"} %>
 		<br>
